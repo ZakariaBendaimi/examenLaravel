@@ -16,4 +16,21 @@ class Depot extends Model
                            group by  c.name,r.name");
         return $depots;
     }
+
+    public static  function selectDepot($id)
+    {
+
+        $depot = DB::select("SELECT co.message as message,co.date as date FROM contributors c
+        JOIN repositories r on c.login = r.contributor_login
+        JOIN commits co on co.repository_id =r.id
+        WHERE r.id= ?", [$id]);
+        return $depot;
+    }
+    public static  function selectNames($id)
+    {
+        $name = DB::select("SELECT c.name as contributor , r.name as repository FROM contributors c
+        JOIN repositories r on c.login = r.contributor_login
+        WHERE r.id= ?", [$id]);
+        return $name;
+    }
 }
