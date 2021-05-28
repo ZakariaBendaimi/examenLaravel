@@ -38,7 +38,7 @@ $(".classe").on('click', function() {
         $("#nomDepot").text(data[0]['repository']);
         $("#nomUser").text(data[0]['contributor']);
         for (let val in data[1]) {
-            let li = $("<li>").text("[" + data[1][val]['date'] + "]" + data[1][val]['message']);
+            let li = $("<li>").text("[" + data[1][val]['date'] + "] " + data[1][val]['message']);
             $("#liste").append(li)
         }
     });
