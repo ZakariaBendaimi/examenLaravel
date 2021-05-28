@@ -7,6 +7,16 @@ header {
     display: block;
     margin-bottom: 30px;
 }
+
+table th {
+    background-color: midnightblue;
+}
+table td {
+    padding: 3px;
+}
+table tr:nth-child(even) {
+    background-color: lightsteelblue;
+}
 main {
     padding-bottom: 10px;
 }
